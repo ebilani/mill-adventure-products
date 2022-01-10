@@ -1,0 +1,13 @@
+@import "../../../../../styles.scss";
+.count-down {
+  @include flex-container(row, flex-end, center);
+  margin-bottom: #{$spacing-lm}px;
+  mat-card {
+    margin: 0 #{$spacing-s}px;
+  }
+}
+.time {
+  text-align: end;
+  font-family: $secondary_font;
+  font-weight: $bold;
+}

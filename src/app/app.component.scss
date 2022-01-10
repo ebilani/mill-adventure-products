@@ -1,0 +1,17 @@
+@import "../styles.scss";
+.header-buttons {
+    display: flex;
+  .custom-btn {
+    margin-right: #{$spacing-l}px;
+    height: #{$spacing-l}px;
+    width: #{$spacing-l}px;
+    background-color: $color__acccent-light;
+    border-radius: 50%;
+    @include flex-container(row, center, center);
+    padding: #{$spacing-l}px;
+    border: none;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

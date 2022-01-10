@@ -1,0 +1,9 @@
+
+<div class="basic-container">
+  <div class="card container">
+    <mat-card *ngFor="let item of listCategories" (click) = "onSelectCategory(item._id)"  class="card-body">
+        <p class="name">{{ item.name }}</p>
+        <p class="product-amount">{{ item.products.length }}</p>
+    </mat-card>
+  </div>
+</div>

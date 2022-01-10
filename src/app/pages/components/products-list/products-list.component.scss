@@ -1,0 +1,24 @@
+@import "../../../../styles.scss";
+.elements{
+    @include flex-container(row, center, center);
+    flex-wrap: wrap;
+    .product-element{
+        width: 300px;
+        margin: #{$spacing-xxl}px;
+        ::ng-deep{
+            .mat-tab-label{
+                font-family: $primary_font;
+                font-weight: $bold;
+            }
+        }
+    }
+    .body-card{
+        @include flex-container(column, center, center);
+        .link-btn{
+            @include link-button;
+        }
+        .description{
+            font-family: $secondary_font;
+        }
+    }
+}

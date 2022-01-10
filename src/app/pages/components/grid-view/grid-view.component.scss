@@ -1,0 +1,42 @@
+@import "../../../../styles.scss";
+@import "~@angular/material/theming";
+.grid-view {
+  .category-name {
+    margin: #{$spacing-xxl}px 0;
+    @include font-size(2);
+    font-weight: $bold;
+    font-family: $primary_font;
+  }
+  .card {
+    @include create-grid(3);
+    column-gap: 4rem;
+    row-gap: 2rem;
+    &:before {
+      content: none;
+    }
+    @include breakpoint(ss) {
+      @include create-grid(2);
+    }
+    @include breakpoint(xs) {
+      @include create-grid(1);
+    }
+    .card-body {
+        @include flex-container(column, center, center);
+      &:hover {
+        @include mat-elevation(16);
+      }
+      .link-btn{
+        margin-top: #{$spacing-s}px;
+        text-decoration: underline;
+        font-family: $text_font;
+        &:hover{
+            border: 1px solid  $color__acccent-light;
+        }
+      }
+    }
+    .name{
+        font-family: $secondary_font;
+        font-weight: $bold;
+    }
+  }
+}

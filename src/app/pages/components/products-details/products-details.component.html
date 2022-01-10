@@ -1,0 +1,28 @@
+<div class="container">
+    <div *ngIf= "viewCountDown" class="countdown-view">
+        <app-countdown-view></app-countdown-view>
+    </div>
+    <mat-card>
+        <mat-card-subtitle class="price">{{product?.price}} $</mat-card-subtitle>
+        <mat-card-title class="name">{{product?.name}}</mat-card-title>
+        <mat-card-content>
+          <p class="description">{{product?.description}}</p>
+        </mat-card-content>
+        <mat-divider inset></mat-divider>
+        <mat-card-actions>
+            <img class="image-product" [alt]= "product?.image.filename" [src] ="product?.image.path">
+        </mat-card-actions>
+        <mat-card-footer>
+         <button class="start-btn" mat-button (click) = "startCountDown()">Click to order today</button>
+          <mat-progress-bar mode="determinate"></mat-progress-bar>
+        </mat-card-footer>
+      </mat-card>
+      <div *ngIf="isLoadingResults"  class="tbl-spinner">
+        <mat-progress-spinner class="spinner" color="primary" [diameter]="50" mode="indeterminate">
+        </mat-progress-spinner>
+    </div>
+</div>
+<div class="grid-custom">
+    <app-grid-view (selectedProduct) = "productFromGrid($event)"></app-grid-view>
+</div>
+

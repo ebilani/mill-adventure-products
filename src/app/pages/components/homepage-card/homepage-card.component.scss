@@ -1,0 +1,33 @@
+@import "../../../../styles.scss";
+@import "~@angular/material/theming";
+.basic-container {
+  margin-top: #{$spacing-xxl}px;
+  .card {
+    .name{
+      font-family: $primary_font;
+      font-weight: $bold;
+    }
+    @include flex-container(row, center, center);
+    flex-wrap: wrap;
+    .card-body {
+      @include flex-container(column, center, center);
+      width: 150px;
+      border: 1px solid $color__primary;
+      margin: #{$spacing-l}px;
+      padding: #{$spacing}px;
+      text-align: center;
+      cursor: pointer;
+      &:hover {
+        @include mat-elevation(16);
+      }
+    }
+    .product-amount {
+      height: #{$spacing-l}px;
+      width: #{$spacing-l}px;
+      background-color: $color__acccent-light;
+      border-radius: 50%;
+      font-family: $text_font;
+      @include flex-container(row, center, center);
+    }
+  }
+}
