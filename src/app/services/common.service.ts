@@ -7,6 +7,5 @@ import { Category } from '../models';
 })
 export class CommonService {
   categoryList: BehaviorSubject<any> = new BehaviorSubject([]);
-  changedProductId: BehaviorSubject<string> = new BehaviorSubject("");
   constructor() { }
 }
