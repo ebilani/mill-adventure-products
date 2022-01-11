@@ -13,12 +13,13 @@ export class GridViewComponent implements OnInit {
   @Output() selectedProduct = new EventEmitter<any>();
   categories: any = [];
   randomlySelectedCategory: any = [];
+  imageUrlAttach: string;
   constructor(private router: Router,private commonService: CommonService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.imageUrlAttach = this.commonService.imageUrl;
     this.categories = this.commonService.categoryList.getValue();
-    this.filterProductsDifferentFromSelected()
-    console.log(this.route.snapshot.params.id, this.randomlySelectedCategory)
+    this.filterProductsDifferentFromSelected();
   }
   filterProductsDifferentFromSelected(){
    const filteredCategories = this.categories.filter(el=> el._id != this.route.snapshot.params.id);

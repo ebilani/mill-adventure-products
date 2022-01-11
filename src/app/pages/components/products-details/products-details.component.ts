@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { finalize, tap } from 'rxjs/operators';
 import { Product } from 'src/app/models';
+import { CommonService } from 'src/app/services/common.service';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -13,9 +14,11 @@ export class ProductsDetailsComponent implements OnInit {
   product: Product;
   isLoadingResults: boolean = true;
   viewCountDown: boolean = false;
-  constructor(private route: ActivatedRoute, private productsService: ProductsService) { }
+  imageUrlAttach: string;
+  constructor(private route: ActivatedRoute, private productsService: ProductsService, private commonService: CommonService) { }
 
   ngOnInit(): void {
+    this.imageUrlAttach = this.commonService.imageUrl;
     if(this.route.snapshot.params.id_prod){
       this.getDetailsOfProducts(this.route.snapshot.params.id_prod);
     }

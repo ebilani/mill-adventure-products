@@ -10,7 +10,7 @@
         </mat-card-content>
         <mat-divider inset></mat-divider>
         <mat-card-actions>
-            <img class="image-product" [alt]= "product?.image.filename" [src] ="product?.image.path">
+          <img class="image-product" [alt]= "product?.image.filename" [src] ="imageUrlAttach + product?.image.path">
         </mat-card-actions>
         <mat-card-footer>
          <button class="start-btn" mat-button (click) = "startCountDown()">Click to order today</button>

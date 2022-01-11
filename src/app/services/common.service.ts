@@ -7,5 +7,6 @@ import { Category } from '../models';
 })
 export class CommonService {
   categoryList: BehaviorSubject<any> = new BehaviorSubject([]);
+  imageUrl: string = "https://images.takeshape.io/";
   constructor() { }
 }

@@ -5,7 +5,7 @@
             <mat-tab  [label]="item.name">
                 <div class="body-card">
                     <p class="description">{{item.description}}</p>
-                    <img [src] ="item.image.path">
+                     <img [src] ="imageUrlAttach +item.image.path" [alt]= "item?.image.filename">
                     <button class="link-btn" mat-button  (click) = "onSelectProduct(item._id)">Go to details</button>
                 </div>
             </mat-tab>

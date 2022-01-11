@@ -8,6 +8,7 @@
     font-family: $primary_font;
   }
   .card {
+    margin-bottom: #{$spacing-lm}px;
     @include create-grid(3);
     column-gap: 4rem;
     row-gap: 2rem;
@@ -22,6 +23,9 @@
     }
     .card-body {
         @include flex-container(column, center, center);
+        .image-product{
+          width: 120px;
+        }
       &:hover {
         @include mat-elevation(16);
       }

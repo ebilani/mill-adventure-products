@@ -3,7 +3,7 @@
     <div class="card">
       <mat-card *ngFor="let item of randomlySelectedCategory?.products" class="card-body">
           <p class="name">{{ item?.name }}</p>
-          <img class="image-product" [alt]= "item?.image.filename" [src] ="item?.image.path">
+          <img class="image-product" [alt]= "item?.image.filename" [src] ="imageUrlAttach + item?.image.path">
           <button class="link-btn" mat-button [routerLink]="['../', item._id]" (click) = "getProduct(item)"  >Go to details</button>
       </mat-card>
     </div>
